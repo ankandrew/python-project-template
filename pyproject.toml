@@ -17,7 +17,7 @@ isort = "*"
 
 [tool.black]
 line-length = 100
-target-version = ['py39']
+target-version = ["py39"]
 exclude = """
   **/venv/
   **/.venv/
