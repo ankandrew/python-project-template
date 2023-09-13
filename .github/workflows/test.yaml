@@ -1,0 +1,36 @@
+name: test
+run-name: Test
+on: [ push ]
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ 3.9 ]
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install poetry
+        run: pipx install poetry
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'poetry'
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Check Format
+        run: make check_black
+
+      - name: Check Imports
+        run: make check_isort
+
+      - name: Check Linter
+        run: make pylint
+
+      - name: Run tests
+        run: make tests
