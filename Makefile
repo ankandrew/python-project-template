@@ -2,11 +2,11 @@
 SRC_DIRS := src/ test/
 
 # Tasks
-black:
+format:
 	@echo "==> Formatting code..."
 	poetry run black $(SRC_DIRS)
 
-check_black:
+check_format:
 	@echo "==> Checking format..."
 	poetry run black --check --diff $(SRC_DIRS)
 
@@ -33,6 +33,6 @@ clean_caches:
 	find . -type f -name "*.pyc" -exec rm -f {} +
 
 
-run_local_checks: black isort pylint tests
+run_local_checks: format isort pylint tests
 
-.PHONY: black check_black isort check_isort pylint tests clean_caches
+.PHONY: format check_format isort check_isort pylint tests clean_caches
