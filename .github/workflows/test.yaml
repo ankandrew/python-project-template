@@ -24,7 +24,7 @@ jobs:
         run: poetry install
 
       - name: Check Format
-        run: make check_black
+        run: make check_format
 
       - name: Check Imports
         run: make check_isort
