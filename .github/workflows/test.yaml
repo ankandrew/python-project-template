@@ -26,11 +26,8 @@ jobs:
       - name: Check Format
         run: make check_format
 
-      - name: Check Imports
-        run: make check_isort
-
-      - name: Check Linter
-        run: make pylint
+      - name: Run Linter
+        run: make linter
 
       - name: Run tests
         run: make tests
