@@ -15,6 +15,7 @@ pytest = "*"
 black = "*"
 isort = "*"
 pylint = "*"
+mypy = "*"
 
 [tool.black]
 line-length = 100

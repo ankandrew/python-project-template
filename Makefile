@@ -16,13 +16,16 @@ check_format:
 	@echo "==> Checking isort..."
 	@poetry run isort --check --diff $(SRC_DIRS)
 
-.PHONY: linter
-linter:
+.PHONY: lint
+lint:
 	@echo "==> Running pylint..."
 	@poetry run pylint $(SRC_DIRS)
+	@echo "==> Running Mypy..."
+	@poetry run mypy $(SRC_DIRS)
 
-.PHONY: tests
-tests:
+
+.PHONY: test
+test:
 	@echo "==> Running tests..."
 	@poetry run pytest
 
@@ -39,4 +42,4 @@ clean:
 	@rm -rf *.egg-info
 
 
-run_local_checks: format linter tests
+run_local_checks: format lint test
