@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "project-name"
+name = "project-name"  # FIXME
 version = "0.1.0"
-description = ""
+description = ""  # FIXME
 authors = ["ankandrew <61120139+ankandrew@users.noreply.github.com>"]
 readme = "README.md"
 
@@ -27,6 +27,15 @@ py_version = 39
 include_trailing_comma = true
 multi_line_output = 3
 skip_glob = ["**venv", "**.venv", "**env", "**.env"]
+
+[tool.pylint.miscellaneous]
+notes = ["XXX"]
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.basic]
+no-docstring-rgx = "^__|^test_"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,5 +1,5 @@
 # Directories
-SRC_DIRS := src/ test/
+SRC_DIRS := src/ test/  # FIXME
 
 # Tasks
 .PHONY: format
