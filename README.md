@@ -15,7 +15,7 @@ A modern Python project template to kickstart your next Python project with all 
 - 📋 **Makefile**: Easily execute common project tasks with a Makefile.
 - 🧪 **Pytest**: Write and run tests for your project.
 - 🔍 **Mypy**: Catch and prevent type-related errors in your code.
-- 🔗 **GitHub Workflow**: Automated GitHub workflow for linting, formatting, and testing your code with every push.
+- 🔗 **GitHub Workflow**: Automated GitHub workflow for linting, formatting, and testing your code.
 - 🔧 **Modern Tools**: Use modern Python tools and best practices for development.
 
 ## Getting Started
