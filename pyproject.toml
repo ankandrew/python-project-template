@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "project-name"  # FIXME
 version = "0.1.0"
-description = ""  # FIXME
+description = "A short description of your package."  # FIXME
 authors = ["ankandrew <61120139+ankandrew@users.noreply.github.com>"]
 readme = "README.md"
 
@@ -12,30 +12,20 @@ python = "^3.10"
 pytest = "*"
 
 [tool.poetry.group.dev.dependencies]
-black = "*"
-isort = "*"
-pylint = "*"
 mypy = "*"
+ruff = "^0.3.1"
 
-[tool.black]
+[tool.ruff]
 line-length = 100
-target-version = ["py39"]
+target-version = "py310"
 
-[tool.isort]
-line_length = 100
-py_version = 39
-include_trailing_comma = true
-multi_line_output = 3
-skip_glob = ["**venv", "**.venv", "**env", "**.env"]
+[tool.ruff.lint]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
 
-[tool.pylint.miscellaneous]
-notes = ["XXX"]
-
-[tool.pylint.format]
-max-line-length = 100
-
-[tool.pylint.basic]
-no-docstring-rgx = "^__|^test_"
+[tool.ruff.format]
+line-ending = "lf"
 
 [build-system]
 requires = ["poetry-core"]
