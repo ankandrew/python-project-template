@@ -11,12 +11,11 @@ A modern Python project template to kickstart your next Python project with all 
 
 - ✨ **Poetry**: Manage your project's dependencies and packaging with Poetry.
 - 📝 **Editorconfig**: Ensure consistent code formatting across different editors.
-- 🔧 **Formatter (Black & Isort)**: Automatically format your code using Black and Isort.
+- 🔧 **Formatter**: Automatically format your code using Ruff formatter and import sorter.
+- 🔍 **Linters**: Catch and prevent errors in your code. Ruff is used for linting and MyPy for type checking.
 - 📋 **Makefile**: Easily execute common project tasks with a Makefile.
-- 🧪 **Pytest**: Write and run tests for your project.
-- 🔍 **Mypy**: Catch and prevent type-related errors in your code.
+- 🧪 **Test**: Write and run tests for your project using pytest.
 - 🔗 **GitHub Workflow**: Automated GitHub workflow for linting, formatting, and testing your code.
-- 🔧 **Modern Tools**: Use modern Python tools and best practices for development.
 
 ## Getting Started
 
