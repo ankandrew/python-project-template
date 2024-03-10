@@ -1,5 +1,5 @@
 # Directories
-SRC_DIRS := project_name/ test/  # FIXME
+SRC_PATHS := project_name/ test/  # FIXME
 
 # Tasks
 .PHONY: help
@@ -19,16 +19,16 @@ help:
 format:
 	@echo "==> Sorting imports..."
 	@# Currently, the Ruff formatter does not sort imports, see https://docs.astral.sh/ruff/formatter/#sorting-imports
-	@poetry run ruff check --select I --fix $(SRC_DIRS)
+	@poetry run ruff check --select I --fix $(SRC_PATHS)
 	@echo "=====> Formatting code..."
-	@poetry run ruff format $(SRC_DIRS)
+	@poetry run ruff format $(SRC_PATHS)
 
 .PHONY: check_format
 check_format:
 	@echo "=====> Checking format..."
-	@poetry run ruff format --check --diff $(SRC_DIRS)
+	@poetry run ruff format --check --diff $(SRC_PATHS)
 	@echo "=====> Checking imports are sorted..."
-	@poetry run ruff check --select I --exit-non-zero-on-fix $(SRC_DIRS)
+	@poetry run ruff check --select I --exit-non-zero-on-fix $(SRC_PATHS)
 
 .PHONY: ruff
 ruff:
