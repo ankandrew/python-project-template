@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pylint = "*"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
@@ -50,6 +51,12 @@ unfixable = []
 
 [tool.ruff.format]
 line-ending = "lf"
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.basic]
+no-docstring-rgx = "^__|^test_"
 
 [build-system]
 requires = ["poetry-core"]

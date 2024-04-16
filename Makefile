@@ -1,7 +1,7 @@
 # Directories
 SRC_PATHS := project_name/ test/  # FIXME
 
-# Tasks
+# Targets
 .PHONY: help
 help:
 	@echo "Available targets:"
@@ -9,11 +9,12 @@ help:
 	@echo "  format           : Format code using Ruff format"
 	@echo "  check_format     : Check code formatting with Ruff format"
 	@echo "  ruff             : Run Ruff linter"
+	@echo "  pylint           : Run Pylint linter"
 	@echo "  mypy             : Run MyPy static type checker"
-	@echo "  lint             : Run Ruff linter and Mypy for static code analysis"
+	@echo "  lint             : Run linters (Ruff, Pylint and Mypy)"
 	@echo "  test             : Run tests using pytest"
+	@echo "  checks           : Check format, lint, and test"
 	@echo "  clean            : Clean up caches and build artifacts"
-	@echo "  checks           : Run format, lint, and test"
 
 .PHONY: format
 format:
@@ -35,18 +36,23 @@ ruff:
 	@echo "=====> Running Ruff..."
 	@poetry run ruff check $(SRC_PATHS)
 
+.PHONY: pylint
+pylint:
+	@echo "=====> Running Pylint..."
+	@poetry run pylint $(SRC_PATHS)
+
 .PHONY: mypy
 mypy:
 	@echo "=====> Running Mypy..."
 	@poetry run mypy $(SRC_PATHS)
 
 .PHONY: lint
-lint: ruff mypy
+lint: ruff pylint mypy
 
 .PHONY: test
 test:
 	@echo "=====> Running tests..."
-	@poetry run pytest
+	@poetry run pytest test/
 
 .PHONY: clean
 clean:
