@@ -1,5 +1,5 @@
 # Directories
-SRC_PATHS := project_name/ test/  # FIXME
+SRC_PATHS := project_name/ test/  # TODO
 
 # Targets
 .PHONY: help

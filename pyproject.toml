@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "project-name"  # FIXME
+name = "project-name"  # TODO
 version = "0.1.0"
-description = "A short description of your package."  # FIXME
+description = "A short description of your package."  # TODO
 authors = ["ankandrew <61120139+ankandrew@users.noreply.github.com>"]
 readme = "README.md"
 
@@ -57,6 +57,9 @@ max-line-length = 100
 
 [tool.pylint.basic]
 no-docstring-rgx = "^__|^test_"
+
+[tool.pylint.miscellaneous]
+notes = ["FIXME", "XXX"]
 
 [build-system]
 requires = ["poetry-core"]

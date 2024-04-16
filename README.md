@@ -1,8 +1,8 @@
-[//]: # (FIXME)
+[//]: # (TODO)
 
 # 🐍 Python Project Template 🚀
 
-[//]: # (FIXME)
+[//]: # (TODO)
 ![example workflow](https://github.com/ankandrew/python-project-template/actions/workflows/main.yaml/badge.svg)
 
 A modern Python project template to kickstart your next Python project with all the necessary tools and configurations.
@@ -26,7 +26,7 @@ A modern Python project template to kickstart your next Python project with all 
    ```bash
    pipx install poetry
 
-3. Replace `FIXME` comments in files with project/repo specific.
+3. Replace `TODO` comments in files with project/repo specific.
 
 ### TODO
 
