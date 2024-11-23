@@ -45,6 +45,20 @@ select = [
     "RUF",
     # pandas-vet
     "PD",
+    # flynt
+    "FLY",
+    # flake8-boolean-trap
+    "FBT",
+    # flake8-use-pathlib
+    "PTH",
+    # flake8-comprehensions
+    "C4",
+    # flake8-bandit
+    "S",
+    # flake8-raise
+    "RSE",
+    # flake8-datetimez
+    "DTZ",
 ]
 fixable = ["ALL"]
 unfixable = []
