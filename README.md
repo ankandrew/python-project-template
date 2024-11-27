@@ -30,9 +30,3 @@ A modern Python project template to kickstart your next Python project with all 
    pipx install poetry
 
 3. Replace `TODO` comments in files with project/repo specific.
-
-### TODO
-
-- [ ] Use `copier` or `cookiecutter`
-- [ ] Add Docker image
-- [ ] Add DOC generation in CI/CD
