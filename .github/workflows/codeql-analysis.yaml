@@ -2,13 +2,9 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches:
-      - main
-      - master
   pull_request:
   schedule:
-    - cron: "0 0 * * 1"
-
+    - cron: '31 0 * * 1'
 permissions:
   contents: read
   security-events: write
@@ -35,9 +31,6 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: none
-
-      - name: Perform CodeQL Autobuild
-        uses: github/codeql-action/autobuild@v3
 
       - name: Run CodeQL Analysis
         uses: github/codeql-action/analyze@v3
