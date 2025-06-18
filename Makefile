@@ -1,5 +1,6 @@
 # Directories
 SRC_PATHS := project_name/ test/  # TODO
+YAML_PATHS := .github/
 
 # Targets
 .PHONY: help
@@ -9,6 +10,7 @@ help:
 	@echo "  format           : Format code using Ruff format"
 	@echo "  check_format     : Check code formatting with Ruff format"
 	@echo "  ruff             : Run Ruff linter"
+	@echo "  yamllint         : Run yamllint linter"
 	@echo "  pylint           : Run Pylint linter"
 	@echo "  mypy             : Run MyPy static type checker"
 	@echo "  lint             : Run linters (Ruff, Pylint and Mypy)"
@@ -36,6 +38,11 @@ ruff:
 	@echo "=====> Running Ruff..."
 	@poetry run ruff check $(SRC_PATHS)
 
+.PHONY: yamllint
+yamllint:
+	@echo "=====> Running yamllint..."
+	@poetry run yamllint $(YAML_PATHS)
+
 .PHONY: pylint
 pylint:
 	@echo "=====> Running Pylint..."
@@ -47,7 +54,7 @@ mypy:
 	@poetry run mypy $(SRC_PATHS)
 
 .PHONY: lint
-lint: ruff pylint mypy
+lint: ruff yamllint pylint mypy
 
 .PHONY: test
 test:
