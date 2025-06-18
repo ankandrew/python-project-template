@@ -13,8 +13,9 @@ pytest = "*"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "*"
-ruff = "*"
 pylint = "*"
+ruff = "*"
+yamllint = "*"
 
 [tool.ruff]
 line-length = 100
