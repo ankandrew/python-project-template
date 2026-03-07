@@ -6,7 +6,7 @@
 
 # Python Project Template
 
-![example workflow](https://github.com/your-github-user/your-repo/actions/workflows/ci.yaml/badge.svg) <!-- TODO -->
+![example workflow](https://github.com/ankandrew/python-project-template/actions/workflows/ci.yaml/badge.svg)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
