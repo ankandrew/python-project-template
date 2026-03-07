@@ -1,37 +1,31 @@
 name: Test
 on:
-  workflow_call:  # Allows this workflow to be called by other workflows
-  push:
-    branches:
-      - master
-      - main
-  pull_request:
+  workflow_call:
+
+concurrency:
+  group: test-${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
-    name: Test
     strategy:
       fail-fast: false
       matrix:
-        python-version: [ '3.10', '3.11', '3.12' ]
-        os: [ 'ubuntu-latest' ]
+        python-version: [ '3.10', '3.11', '3.12', '3.13' ]
+        os: [ ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install poetry
-        run: pipx install poetry
-
-      - uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
         with:
+          version: "latest"
           python-version: ${{ matrix.python-version }}
-#          cache: 'poetry'
+#          enable-cache: true
 
-      - name: Install dependencies
-        run: poetry install --all-extras
-
-      - name: Check format
-        run: make check_format
+      - name: Install the project
+        run: make install
 
       - name: Run linters
         run: make lint

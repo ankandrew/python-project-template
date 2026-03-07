@@ -1,21 +1,34 @@
-[tool.poetry]
+[project]
 name = "project-name"  # TODO
 version = "0.1.0"
-description = "A short description of your package."  # TODO
-authors = ["ankandrew <61120139+ankandrew@users.noreply.github.com>"]
+description = "A short description of your package."
+authors = [{ name = "Your Name", email = "your.email@example.com" }]  # TODO
+requires-python = ">=3.10,<4"
 readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
+[dependency-groups]
+test = ["pytest"]
+dev = [
+    "mypy",
+    "pylint",
+    "ruff",
+    "yamllint",
+]
 
-[tool.poetry.group.test.dependencies]
-pytest = "*"
+[tool.uv]
+default-groups = "all"
 
-[tool.poetry.group.dev.dependencies]
-mypy = "*"
-pylint = "*"
-ruff = "*"
-yamllint = "*"
+[build-system]
+requires = ["uv_build>=0.10.3,<0.11.0"]
+build-backend = "uv_build"
 
 [tool.ruff]
 line-length = 120
@@ -75,7 +88,3 @@ no-docstring-rgx = "^__|^test_"
 
 [tool.pylint.miscellaneous]
 notes = ["FIXME", "XXX"]
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
